@@ -1,1 +1,0 @@
-{"object": {"dependencies": [{"basedOn": null, "packageRef": {"identity": "starscream", "isLocal": false, "name": "Starscream", "path": "https://github.com/daltoniam/Starscream.git"}, "state": {"checkoutState": {"branch": null, "revision": "9c03ef715d1bc9334b446c90df53586dd38cf849", "version": "3.1.0"}, "name": "checkout"}, "subpath": "Starscream"}]}, "version": 2}

@@ -1,6 +1,0 @@
-version: "Apple Swift version 5.0 (swiftlang-1001.0.69.5 clang-1001.0.46.3)"
-options: "4e91892f3bcbf3f7b173c75ae071e87f"
-build_time: [1555282809, 708624000]
-inputs:
-  "/Users/ab/Dropbox/Programming/jibla-finance/lab/spm/StompClient/StompClient/StompClient.swift": [1555282635, 158347997]
-  "/Users/ab/Dropbox/Programming/jibla-finance/lab/spm/StompClient/StompClient/StompFrame.swift": [1555282807, 869358574]
