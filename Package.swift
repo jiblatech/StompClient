@@ -22,9 +22,6 @@ let package = Package(
         .target(
             name: "StompClient",
             dependencies: ["Starscream"], 
-            path: "StompClient"),
-        .testTarget(
-            name: "StompClientTests",
-            dependencies: ["StompClient"]),
+            path: "StompClient")        
     ]
 )
