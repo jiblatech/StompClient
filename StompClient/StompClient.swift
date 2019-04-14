@@ -6,7 +6,7 @@
 //  Copyright © 2016 nogle. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import Starscream
 
 public protocol StompClientDelegate: NSObjectProtocol {
