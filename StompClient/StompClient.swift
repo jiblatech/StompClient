@@ -12,7 +12,7 @@ import Starscream
 public protocol StompClientDelegate: NSObjectProtocol {
     
     func stompClientDidConnected(_ client: StompClient)
-    func stompClient(_ client: StompClient, didErrorOccurred error: NSError)
+    func stompClient(_ client: StompClient, didErrorOccurred error: Error)
     func stompClient(_ client: StompClient, didReceivedData data: Data, fromDestination destination: String)
     
 }
@@ -41,9 +41,9 @@ public final class StompClient {
     }
     
     // MARK: - Public Methods
-    public func setValue(_ value: String, forHeaderField field: String) {
-        socket.headers[field] = value
-    }
+    // public func setValue(_ value: String, forHeaderField field: String) {
+        // socket.headers[field] = value
+    // }
     
     public func connect() {
         socket.connect()
@@ -100,17 +100,17 @@ public final class StompClient {
 // MARK: - Websocket Delegate
 extension StompClient: WebSocketDelegate {
     
-    public func websocketDidConnect(socket: WebSocket) {
+    public func websocketDidConnect(socket: WebSocketClient) {
         // We should wait for server response an open type frame.
     }
     
-    public func websocketDidDisconnect(socket: WebSocket, error: NSError?) {
+    public func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
         if let error = error {
             delegate?.stompClient(self, didErrorOccurred: error)
         }
     }
     
-    public func websocketDidReceiveMessage(socket: WebSocket, text: String) {
+    public func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
         var mutableText = text
         let firstCharacter = mutableText.remove(at: mutableText.startIndex)
         do {
@@ -146,7 +146,7 @@ extension StompClient: WebSocketDelegate {
         }
     }
     
-    public func websocketDidReceiveData(socket: WebSocket, data: Data) {
+    public func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
         // This delegate will NOT be called, since STOMP is a message convey protocol.
     }
     
@@ -170,12 +170,12 @@ extension String {
     
     static func randomAlphaNumericString(_ length: Int) -> String {
         let allowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        let allowedCharsCount = UInt32(allowedChars.characters.count)
+        let allowedCharsCount = UInt32(allowedChars.count)
         var randomString = ""
         
         for _ in (0 ..< length) {
             let randomNum = Int(arc4random_uniform(allowedCharsCount))
-            let newCharacter = allowedChars[allowedChars.characters.index(allowedChars.startIndex, offsetBy: randomNum)]
+            let newCharacter = allowedChars[allowedChars.index(allowedChars.startIndex, offsetBy: randomNum)]
             randomString += String(newCharacter)
         }
         
@@ -186,8 +186,8 @@ extension String {
 
 public protocol WebSocketProtocol {
     
-    weak var delegate: WebSocketDelegate? { get set }
-    var headers: [String : String] { get set }
+    var delegate: WebSocketDelegate? { get set }
+    // var headers: [String : String] { get set }
     var isConnected: Bool { get }
     
     func connect()
@@ -197,6 +197,8 @@ public protocol WebSocketProtocol {
 }
 
 extension WebSocket: WebSocketProtocol {
+    
+
     public func disconnect(_ forceTimeout: TimeInterval?) {
         disconnect(forceTimeout: forceTimeout)
     }

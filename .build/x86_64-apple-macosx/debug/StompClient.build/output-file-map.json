@@ -1,0 +1,17 @@
+{
+  "": {
+    "swift-dependencies": "/Users/ab/Dropbox/Programming/jibla-finance/lab/spm/StompClient/.build/x86_64-apple-macosx/debug/StompClient.build/master.swiftdeps"
+  },
+  "/Users/ab/Dropbox/Programming/jibla-finance/lab/spm/StompClient/StompClient/StompClient.swift": {
+    "dependencies": "/Users/ab/Dropbox/Programming/jibla-finance/lab/spm/StompClient/.build/x86_64-apple-macosx/debug/StompClient.build/StompClient.d",
+    "object": "/Users/ab/Dropbox/Programming/jibla-finance/lab/spm/StompClient/.build/x86_64-apple-macosx/debug/StompClient.build/StompClient.swift.o",
+    "swiftmodule": "/Users/ab/Dropbox/Programming/jibla-finance/lab/spm/StompClient/.build/x86_64-apple-macosx/debug/StompClient.build/StompClient~partial.swiftmodule",
+    "swift-dependencies": "/Users/ab/Dropbox/Programming/jibla-finance/lab/spm/StompClient/.build/x86_64-apple-macosx/debug/StompClient.build/StompClient.swiftdeps"
+  },
+  "/Users/ab/Dropbox/Programming/jibla-finance/lab/spm/StompClient/StompClient/StompFrame.swift": {
+    "dependencies": "/Users/ab/Dropbox/Programming/jibla-finance/lab/spm/StompClient/.build/x86_64-apple-macosx/debug/StompClient.build/StompFrame.d",
+    "object": "/Users/ab/Dropbox/Programming/jibla-finance/lab/spm/StompClient/.build/x86_64-apple-macosx/debug/StompClient.build/StompFrame.swift.o",
+    "swiftmodule": "/Users/ab/Dropbox/Programming/jibla-finance/lab/spm/StompClient/.build/x86_64-apple-macosx/debug/StompClient.build/StompFrame~partial.swiftmodule",
+    "swift-dependencies": "/Users/ab/Dropbox/Programming/jibla-finance/lab/spm/StompClient/.build/x86_64-apple-macosx/debug/StompClient.build/StompFrame.swiftdeps"
+  }
+}

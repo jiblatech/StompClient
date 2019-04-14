@@ -125,9 +125,10 @@ enum StompHeader: Hashable {
         }
     }
     
-    var hashValue: Int {
-        return key.hashValue
-    }
+    func hash(into hasher: inout Hasher) {
+         hasher.combine(key)
+    
+    }    
     
     // MARK: Designated Initializer
     init(key: String, value: String) {
